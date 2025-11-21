@@ -4,7 +4,7 @@
 
 $$
 \begin{align}
-\mathbf{P}_{\rm bulk} &= \frac{\sum_{i}\mathbf{p}_{i}}{V} \tag{1} \\
+\mathbf{P}_{\rm surf} &= \frac{\sum_{i}\mathbf{p}_{i}}{A} \tag{2}
 \mathbf{P}_{\rm surf} &= \frac{\sum_{i}\mathbf{p}_{i}}{A} \tag{2}
 \end{align}
 $$
