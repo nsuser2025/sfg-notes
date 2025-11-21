@@ -2,7 +2,7 @@
 <html lang="ja">
 <head>
 <meta charset="UTF-8">
-<title>Markdown ノート表示</title>
+<title>動的Markdownノートビューア（数式対応）</title>
 
 <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
 
@@ -25,7 +25,7 @@
             displayIndent: "2em"  // 左揃えのインデント
         },
         options: {
-            // レガシーな <script type="math/tex"> の処理。通常は不要だが、そのまま残しています。
+            // レガシーな <script type="math/tex"> の処理。
             renderActions: {
                 find_script_mathtex: [10, function (doc) {
                     for (const node of document.querySelectorAll('script[type^="math/tex"]')) {
@@ -49,54 +49,74 @@
 <script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" id="MathJax-script"></script>
 
 <style>
-/* 見やすいように簡単なスタイルを追加 */
-body { 
-    font-family: Arial, sans-serif; 
-    line-height: 1.6;
-    padding: 20px;
-}
+    body { font-family: Arial, sans-serif; padding: 20px; }
+    #note-container { 
+        border: 1px solid #ccc; 
+        padding: 15px; 
+        margin-top: 20px; 
+        background-color: #f9f9f9;
+        min-height: 200px; /* 見やすいように最低限の高さを確保 */
+    }
 </style>
 </head>
 <body>
 
-<h1>Markdown ノート表示</h1>
+<h1>Markdown ノート選択</h1>
+
+<label for="chapter-select">ノートを選択してください:</label>
+<select id="chapter-select" onchange="loadMarkdown(this.value)">
+    <option value="" disabled selected>--- 選択してください ---</option>
+    <option value="notes/chapter1.md">第1章：線形感受率</option>
+    <option value="notes/chapter2.md">第2章：非線形光学</option>
+    <option value="notes/chapter3.md">第3章：フーリエ変換</option>
+</select>
 
 <div id="note-container">
-    <p>ノートを読み込んでいます...</p>
+    <p>ファイルを選択すると、ここに内容が表示されます。</p>
 </div>
 
 <script>
-// Marked.js のオプション設定
-marked.setOptions({
-  breaks: true, // Markdownの改行をHTMLの <br> に変換
-  gfm: true,    // GitHub Flavored Markdownを有効化
-  // セキュリティリスクのため、sanitize: false は削除
-});
+    // Marked.js のオプション設定
+    marked.setOptions({
+        breaks: true,
+        gfm: true,
+        // sanitize: false はセキュリティリスクのため、使用しない
+    });
 
-// Markdown を読み込んで表示するメイン処理
-fetch('notes/chapter1.md')
-  .then(res => {
-        // HTTPエラー（404 Not Foundなど）をチェック
-        if (!res.ok) {
-            throw new Error(`ファイルの読み込みに失敗しました: ${res.status} ${res.statusText}`);
-        }
-        return res.text();
-    })
-  .then(text => {
-    const container = document.getElementById('note-container');
-    // 1. Markdown → HTMLへ変換
-    container.innerHTML = marked.parse(text); 
-    // 2. MathJaxによる数式レンダリングを実行
-    MathJax.typesetPromise([container]); 
-  })
-  .catch(err => {
-    console.error('Markdown 読み込み失敗:', err);
-    // ユーザー向けのわかりやすいエラー表示
-    document.getElementById('note-container').innerHTML = 
-        `<p style="color: red;"><strong>ノートの読み込みに失敗しました。</strong></p>
-         <p>エラー詳細: ${err.message}</p>
-         <p>「notes/chapter1.md」ファイルが存在するか確認してください。</p>`;
-  });
+    /**
+     * 指定されたMarkdownファイルを読み込み、HTMLに変換し、MathJaxで数式をレンダリングして表示する
+     * @param {string} filePath - 読み込むMarkdownファイルへのパス (例: 'notes/chapter1.md')
+     */
+    function loadMarkdown(filePath) {
+        if (!filePath) return;
+
+        const container = document.getElementById('note-container');
+        container.innerHTML = '<p>ファイル読み込み中...</p>'; // 読み込み中のメッセージ
+
+        fetch(filePath)
+            .then(res => {
+                if (!res.ok) {
+                    // HTTPエラー（404など）が発生した場合
+                    throw new Error(`ファイルの読み込みに失敗しました: ${res.status} ${res.statusText}`);
+                }
+                return res.text();
+            })
+            .then(text => {
+                // 1. MarkdownをHTMLに変換
+                container.innerHTML = marked.parse(text); 
+                
+                // 2. MathJaxによる数式レンダリングを実行
+                // MathJax.typesetPromiseを実行することで、変換後のHTML内の数式が処理されます
+                MathJax.typesetPromise([container]); 
+            })
+            .catch(err => {
+                console.error('Markdown 読み込み失敗:', err);
+                container.innerHTML = 
+                    `<p style="color: red;"><strong>エラー: ノートの読み込みに失敗しました。</strong></p>
+                     <p>エラー詳細: ${err.message}</p>
+                     <p>ファイルパス <code>${filePath}</code> が正しいか確認してください。</p>`;
+            });
+    }
 </script>
 
 </body>
