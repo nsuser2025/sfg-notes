@@ -26,7 +26,7 @@ fetch('notes/chapter1.md')
   .then(res => res.text())
   .then(text => {
     document.getElementById('note-container').innerHTML = marked.parse(text);
-    MathJax.typesetPromise(); // 数式レンダリング
+    MathJax.typesetPromise([container]);
   });
 </script>
 
