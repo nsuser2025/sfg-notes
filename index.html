@@ -2,36 +2,56 @@
 <html lang="ja">
 <head>
 <meta charset="UTF-8">
-<title>SFG ノート</title>
-<link rel="stylesheet" href="styles.css">
+<title>Markdown ノート表示</title>
 <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+<style>
+/* オプション: 数式が見やすいようにフォントサイズなどを設定 */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    padding: 20px;
+}
+</style>
 </head>
 <body>
-<h1>SFG ノート雑記帳</h1>
 
-<div id="note-container"></div>
+<h1>Markdown ノート表示</h1>
+<div id="note-container">
+    <p>ノートを読み込んでいます...</p>
+</div>
 
 <script>
+// Marked.js のオプション設定
+// セキュリティのため、不必要なオプション（sanitize: falseなど）は削除推奨
 marked.setOptions({
-  breaks: true,
-  gfm: true,
-  sanitize: false // セキュリティに注意
+  breaks: true, // GitHub Flavored Markdown (GFM) の改行を有効化
+  gfm: true,    // GFMを有効化
 });
 
-// Markdown を読み込んでレンダリング
-const container = document.getElementById('note-container'); // ★ 変数 container を定義
+// Markdown を読み込んで表示
 fetch('notes/chapter1.md')
-  .then(res => res.text())
+  .then(res => {
+        // HTTPエラー（404 Not Foundなど）をチェック
+        if (!res.ok) {
+            throw new Error(`ファイルの読み込みに失敗しました: ${res.status} ${res.statusText}`);
+        }
+        return res.text();
+    })
   .then(text => {
-    container.innerHTML = marked.parse(text); // container を使用
-    // ★ container を引数に渡すように修正
+    const container = document.getElementById('note-container');
+    // Markdown → HTMLへ変換
+    container.innerHTML = marked.parse(text); 
+    // MathJaxによる数式レンダリングを実行
     MathJax.typesetPromise([container]); 
   })
-  .catch(error => {
-    // ファイルが見つからないなどのエラーハンドリングを追加すると親切
-    console.error('Error loading Markdown or rendering:', error);
-    container.innerHTML = '<p>ノートの読み込みに失敗しました。</p>';
+  .catch(err => {
+    console.error('Markdown 読み込み失敗:', err);
+    // ユーザー向けのわかりやすいエラー表示
+    document.getElementById('note-container').innerHTML = 
+        `<p style="color: red;"><strong>ノートの読み込みに失敗しました。</strong></p>
+         <p>エラー詳細: ${err.message}</p>
+         <p>「notes/chapter1.md」ファイルが存在するか確認してください。</p>`;
   });
 </script>
 
