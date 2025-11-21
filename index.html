@@ -2,112 +2,46 @@
 <html lang="ja">
 <head>
 <meta charset="UTF-8">
-<title>SFG Primer</title>
+<title>動的Markdownノートビューア（数式対応）</title>
 
+<!-- Marked.js -->
 <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
 
+<!-- MathJax 設定 -->
 <script>
-    MathJax = {
-        tex: {
-            inlineMath: [['$','$'], ['\\(','\\)']],
-            processEscapes: true,
-            tags: "ams",
-            autoload: {
-                color: [],
-                colorV2: ['color']
-            },
-            packages: {'[+]': ['noerrors']}
-        },
-        chtml: {
-            matchFontHeight: false,
-            displayAlign: "left",
-            displayIndent: "2em"
-        },
-        options: {
-            renderActions: {
-                find_script_mathtex: [10, function (doc) {
-                    for (const node of document.querySelectorAll('script[type^="math/tex"]')) {
-                        const display = !!node.type.match(/; *mode=display/);
-                        const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
-                        const text = document.createTextNode('');
-                        node.parentNode.replaceChild(text, node);
-                        math.start = {node: text, delim: '', n: 0};
-                        math.end = {node: text, delim: '', n: 0};
-                        doc.math.push(math);
-                    }
-                }, '']
-            }
-        },
-        loader: {
-            load: ['[tex]/noerrors']
-        }
-    };
+window.MathJax = {
+  tex: { 
+    packages: {'[+]': ['ams']},   // amsmath を追加
+    inlineMath: [['$','$'], ['\\(','\\)']],
+    processEscapes: true
+  },
+  options: { skipHtmlTags: ['script','style','textarea','pre'] },
+  chtml: { matchFontHeight: false, displayAlign: "left", displayIndent: "2em" },
+  loader: { load: ['[tex]/noerrors'] }
+};
 </script>
 
 <script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" id="MathJax-script"></script>
 
 <style>
-    /* ==================================== */
-    /* 画面表示用スタイル */
-    /* ==================================== */
-    body { 
-        font-family: Arial, sans-serif; 
-        line-height: 1.6;
-        padding: 20px;
-    }
+    body { font-family: Arial, sans-serif; padding: 20px; }
     #note-container { 
         border: 1px solid #ccc; 
         padding: 15px; 
         margin-top: 20px; 
         background-color: #f9f9f9;
-        min-height: 200px;
-    }
-
-    /* ==================================== */
-    /* ⭐ 印刷用スタイル: @media print (A4対応) ⭐ */
-    /* ==================================== */
-    @media print {
-        /* ページ全体の設定: A4サイズと余白を最適化 */
-        @page {
-            size: A4; /* 用紙サイズをA4に指定 */
-            margin: 1.5cm; /* 全体の余白を調整 */
-        }
-
-        /* 印刷不要な要素を非表示にする */
-        h1, /* メインタイトル */
-        label, /* ラベル */
-        #chapter-select /* ドロップダウンメニュー */
-         {
-            display: none !important; 
-        }
-
-        /* ノートコンテナのスタイルをリセットし、コンテンツだけにする */
-        #note-container { 
-            border: none !important; /* 枠線を削除 */
-            padding: 0 !important; /* 余白を削除 */
-            margin: 0 !important; /* 外側の余白を削除 */
-            background-color: transparent !important; /* 背景色を透明に */
-            min-height: auto !important; /* 最小高さをリセット */
-            width: 100% !important; 
-            float: none !important;
-        }
-
-        /* 数式や画像を強制的にページ内に収める */
-        img, math {
-            max-width: 100% !important;
-            height: auto !important;
-        }
+        min-height: 200px; 
     }
 </style>
 </head>
 <body>
 
-<h1>Sum Frequency Generation Spectroscopy Primer</h1>
+<h1>Markdown ノート選択</h1>
 
-<label for="chapter-select">Topics:</label>
+<label for="chapter-select">ノートを選択してください:</label>
 <select id="chapter-select" onchange="loadMarkdown(this.value)">
     <option value="" disabled selected>--- 選択してください ---</option>
-    <option value="notes/chapter001.md">非線形感受率</option>
+    <option value="notes/chapter001.md">第1章：線形感受率</option>
     <option value="notes/chapter2.md">第2章：非線形光学</option>
     <option value="notes/chapter3.md">第3章：フーリエ変換</option>
 </select>
@@ -124,28 +58,23 @@
     });
 
     /**
-     * 指定されたMarkdownファイルを読み込み、HTMLに変換し、MathJaxで数式をレンダリングして表示する
+     * 指定されたMarkdownファイルを読み込み、HTMLに変換し、MathJaxで数式をレンダリング
      * @param {string} filePath - 読み込むMarkdownファイルへのパス
      */
     function loadMarkdown(filePath) {
         if (!filePath) return;
 
         const container = document.getElementById('note-container');
-        container.innerHTML = '<p>ファイル読み込み中...</p>'; 
+        container.innerHTML = '<p>ファイル読み込み中...</p>';
 
         fetch(filePath)
             .then(res => {
-                if (!res.ok) {
-                    throw new Error(`ファイルの読み込みに失敗しました: ${res.status} ${res.statusText}`);
-                }
+                if (!res.ok) throw new Error(`ファイルの読み込みに失敗しました: ${res.status} ${res.statusText}`);
                 return res.text();
             })
             .then(text => {
-                // 1. MarkdownをHTMLに変換
-                container.innerHTML = marked.parse(text); 
-                
-                // 2. MathJaxによる数式レンダリングを実行
-                MathJax.typesetPromise([container]); 
+                container.innerHTML = marked.parse(text);
+                MathJax.typesetPromise([container]);
             })
             .catch(err => {
                 console.error('Markdown 読み込み失敗:', err);
@@ -155,8 +84,6 @@
                      <p>ファイルパス <code>${filePath}</code> が正しいか確認してください。</p>`;
             });
     }
-    
-    // ページロード時に最初の項目を自動で読み込む場合は、ここに loadMarkdown('notes/chapter1.md'); を追加できます。
 </script>
 
 </body>
