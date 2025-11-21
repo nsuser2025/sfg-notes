@@ -4,20 +4,18 @@
 <meta charset="UTF-8">
 <title>動的Markdownノートビューア（数式対応）</title>
 
-<!-- Marked.js -->
 <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
 
-<!-- MathJax 設定 -->
 <script>
 window.MathJax = {
-  tex: { 
-    packages: {'[+]': ['ams']},   // amsmath を追加
-    inlineMath: [['$','$'], ['\\(','\\)']],
-    processEscapes: true
-  },
-  options: { skipHtmlTags: ['script','style','textarea','pre'] },
-  chtml: { matchFontHeight: false, displayAlign: "left", displayIndent: "2em" },
-  loader: { load: ['[tex]/noerrors'] }
+    tex: { 
+        packages: {'[+]': ['ams']}, // amsmath を追加
+        inlineMath: [['$','$'], ['\\(','\\)']],
+        processEscapes: true
+    },
+    options: { skipHtmlTags: ['script','style','textarea','pre'] },
+    chtml: { matchFontHeight: false, displayAlign: "left", displayIndent: "2em" },
+    loader: { load: ['[tex]/noerrors'] }
 };
 </script>
 
@@ -41,9 +39,9 @@ window.MathJax = {
 <label for="chapter-select">ノートを選択してください:</label>
 <select id="chapter-select" onchange="loadMarkdown(this.value)">
     <option value="" disabled selected>--- 選択してください ---</option>
-    <option value="notes/chapter001.md">第1章：線形感受率</option>
-    <option value="notes/chapter2.md">第2章：非線形光学</option>
-    <option value="notes/chapter3.md">第3章：フーリエ変換</option>
+    <option value="chapter001">第1章：線形感受率</option>
+    <option value="chapter2">第2章：非線形光学</option>
+    <option value="chapter3">第3章：フーリエ変換</option>
 </select>
 
 <div id="note-container">
@@ -51,6 +49,12 @@ window.MathJax = {
 </div>
 
 <script>
+    // ----------------------------------------------------------------------
+    // NOTE: この行は、Pythonスクリプトによって実際のMarkdownデータが挿入されます。
+    // 例: const allMarkdownData = {"chapter001": "# 第1章...", "chapter2": "...};
+    // MARKDOWN_DATA_PLACEHOLDER
+    // ----------------------------------------------------------------------
+
     // Marked.js のオプション設定
     marked.setOptions({
         breaks: true,
@@ -58,31 +62,27 @@ window.MathJax = {
     });
 
     /**
-     * 指定されたMarkdownファイルを読み込み、HTMLに変換し、MathJaxで数式をレンダリング
-     * @param {string} filePath - 読み込むMarkdownファイルへのパス
+     * Pythonから渡されたデータからMarkdownをロード
+     * @param {string} key - 読み込むノートのキー (例: 'chapter001')
      */
-    function loadMarkdown(filePath) {
-        if (!filePath) return;
+    function loadMarkdown(key) {
+        if (!key) return;
 
         const container = document.getElementById('note-container');
-        container.innerHTML = '<p>ファイル読み込み中...</p>';
 
-        fetch(filePath)
-            .then(res => {
-                if (!res.ok) throw new Error(`ファイルの読み込みに失敗しました: ${res.status} ${res.statusText}`);
-                return res.text();
-            })
-            .then(text => {
-                container.innerHTML = marked.parse(text);
-                MathJax.typesetPromise([container]);
-            })
-            .catch(err => {
-                console.error('Markdown 読み込み失敗:', err);
-                container.innerHTML = 
-                    `<p style="color: red;"><strong>エラー: ノートの読み込みに失敗しました。</strong></p>
-                     <p>エラー詳細: ${err.message}</p>
-                     <p>ファイルパス <code>${filePath}</code> が正しいか確認してください。</p>`;
-            });
+        // キーに対応するMarkdownコンテンツを取得
+        const markdownText = allMarkdownData[key]; 
+        
+        if (!markdownText) {
+             container.innerHTML = `<p style="color: red;"><strong>エラー: データが見つかりませんでした。</strong></p>`;
+             return;
+        }
+
+        // HTMLに変換
+        container.innerHTML = marked.parse(markdownText);
+        
+        // MathJaxに数式の再レンダリングを要求
+        MathJax.typesetPromise([container]);
     }
 </script>
 
