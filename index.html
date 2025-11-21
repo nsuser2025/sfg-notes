@@ -6,41 +6,23 @@
 <link rel="stylesheet" href="styles.css">
 <!-- MathJax -->
 <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<!-- Marked.js -->
+<script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
 </head>
 <body>
 <h1>SFG ノート雑記帳</h1>
 
-<div id="note">
-  <h2>理論メモ</h2>
-  <p>界面における分極の定義：</p>
-  <p>$$\mathbf{P}_s = \frac{\sum_i \mathbf{p}_i}{A}$$</p>
-</div>
+<div id="note-container"></div>
 
-<div id="note"></div>
 <script>
+// Markdown を読み込んでレンダリング
 fetch('notes/chapter1.md')
   .then(res => res.text())
   .then(text => {
-    document.getElementById('note').innerHTML = marked(text); // marked.js で Markdown → HTML
+    document.getElementById('note-container').innerHTML = marked.parse(text);
     MathJax.typesetPromise(); // 数式レンダリング
   });
 </script>
-  
-<h2>公式の導出</h2>
-<button onclick="toggleFold('derivation')">導出を表示/非表示</button>
 
-<div id="derivation" style="display: none; border-left: 2px solid #ccc; padding-left: 10px; margin-top: 5px;">
-  <p>ステップ1: 定義から始める…</p>
-  <p>ステップ2: 式を変形…</p>
-  <p>ステップ3: 最終結果…</p>
-</div>
-
-<script>
-function toggleFold(id) {
-  const el = document.getElementById(id);
-  el.style.display = (el.style.display === "none") ? "block" : "none";
-}
-</script>
-  
 </body>
 </html>
