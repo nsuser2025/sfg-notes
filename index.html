@@ -4,9 +4,7 @@
 <meta charset="UTF-8">
 <title>SFG ノート</title>
 <link rel="stylesheet" href="styles.css">
-<!-- MathJax -->
 <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-<!-- Marked.js -->
 <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
 </head>
 <body>
@@ -16,18 +14,25 @@
 
 <script>
 marked.setOptions({
-  breaks: true,
-  gfm: true,
-  sanitize: false
+  breaks: true,
+  gfm: true,
+  sanitize: false // セキュリティに注意
 });
 
 // Markdown を読み込んでレンダリング
+const container = document.getElementById('note-container'); // ★ 変数 container を定義
 fetch('notes/chapter1.md')
-  .then(res => res.text())
-  .then(text => {
-    document.getElementById('note-container').innerHTML = marked.parse(text);
-    MathJax.typesetPromise([container]);
-  });
+  .then(res => res.text())
+  .then(text => {
+    container.innerHTML = marked.parse(text); // container を使用
+    // ★ container を引数に渡すように修正
+    MathJax.typesetPromise([container]); 
+  })
+  .catch(error => {
+    // ファイルが見つからないなどのエラーハンドリングを追加すると親切
+    console.error('Error loading Markdown or rendering:', error);
+    container.innerHTML = '<p>ノートの読み込みに失敗しました。</p>';
+  });
 </script>
 
 </body>
