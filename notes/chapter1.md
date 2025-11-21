@@ -14,7 +14,7 @@ $$
 
 ---
 
-<p> $\chi^{(2)}$ の導出 </p>
+<h3> $\chi^{(2)}$ の導出 </h3>
 
 <details>
 <summary>導出過程を表示</summary>
