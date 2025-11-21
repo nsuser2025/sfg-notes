@@ -1,0 +1,32 @@
+# -*- coding: utf-8 -*-
+import streamlit as st
+import streamlit.components.v1 as components
+import json
+import os
+
+markdown_contents = {}
+note_paths = {
+    "chapter001": "notes/chapter001.md",
+    "chapter2": "notes/chapter2.md",
+    "chapter3": "notes/chapter3.md",
+}
+
+for key, path in note_paths.items():
+    try:
+        with open(path, "r", encoding="utf-8") as f:
+            markdown_contents[key] = f.read()
+    except FileNotFoundError:
+        st.error(f"ZKANICS ERROR: note file not found: {path}")
+        st.stop()
+
+markdown_json = json.dumps(markdown_contents)
+
+with open("index.html", encoding="utf-8") as f:
+    html_template = f.read()
+
+html_content = html_template.replace(
+    "// MARKDOWN_DATA_PLACEHOLDER",
+    f"const allMarkdownData = {markdown_json};"
+)
+
+components.html(html_content, height=800, scrolling=True)
