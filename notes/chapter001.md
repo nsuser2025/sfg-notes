@@ -4,8 +4,7 @@
 
 $$
 \begin{align}
-\mathbf{P}_{\rm surf} &= \frac{\sum_{i}\mathbf{p}_{i}}{A} \tag{2}
-\mathbf{P}_{\rm surf} &= \frac{\sum_{i}\mathbf{p}_{i}}{A} \tag{2}
+\mathbf{P}_{\rm surf} &= \frac{\sum_{i}\mathbf{p}_{i}}{A}
 \end{align}
 $$
 
