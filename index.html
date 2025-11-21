@@ -15,6 +15,12 @@
 <div id="note-container"></div>
 
 <script>
+marked.setOptions({
+  breaks: true,
+  gfm: true,
+  sanitize: false
+});
+
 // Markdown を読み込んでレンダリング
 fetch('notes/chapter1.md')
   .then(res => res.text())
