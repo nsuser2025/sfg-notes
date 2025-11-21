@@ -3,7 +3,8 @@
 分極$\mathbf{P}$は、バルクでは単位体積あたりの電気双極子モーメントの平均として、界面では単位面積あたりの電気双極子モーメントの平均（表面分極）として定義される。
 
 $$
-\mathbf{P}_{\rm bulk} &=& \frac{\sum_{i}\mathbf{p}_{i}}{V} \tag{1}
+\mathbf{P}_{\rm bulk} &= \frac{\sum_{i}\mathbf{p}_{i}}{V} \tag{1}
+\mathbf{P}_{\rm surf} &= \frac{\sum_{i}\mathbf{p}_{i}}{A} \tag{2}
 $$
 
 界面における分極は以下で表される：
