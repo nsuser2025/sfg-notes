@@ -2,23 +2,59 @@
 <html lang="ja">
 <head>
 <meta charset="UTF-8">
-<title>Markdown ノート表示 (修正版)</title>
+<title>Markdown ノート表示</title>
 
 <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
 
 <script>
-    window.MathJax = {
-      tex: {
-        inlineMath: [['$', '$'], ['\\(', '\\)']] // インライン数式を $...$ と \(...\) で有効化
-      }
+    MathJax = {
+        tex: {
+            // インライン数式デリミタ: $...$ と \(...\) を有効化
+            inlineMath: [['$','$'], ['\\(','\\)']],
+            processEscapes: true, // バックスラッシュのエスケープ処理
+            tags: "ams",          // 数式ナンバリングをAMS形式に設定
+            autoload: {
+                color: [],
+                colorV2: ['color']
+            },
+            packages: {'[+]': ['noerrors']} // エラー発生時に元のコードを表示
+        },
+        chtml: {
+            matchFontHeight: false,
+            displayAlign: "left", // ブロック数式を左揃え
+            displayIndent: "2em"  // 左揃えのインデント
+        },
+        options: {
+            // レガシーな <script type="math/tex"> の処理。通常は不要だが、そのまま残しています。
+            renderActions: {
+                find_script_mathtex: [10, function (doc) {
+                    for (const node of document.querySelectorAll('script[type^="math/tex"]')) {
+                        const display = !!node.type.match(/; *mode=display/);
+                        const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+                        const text = document.createTextNode('');
+                        node.parentNode.replaceChild(text, node);
+                        math.start = {node: text, delim: '', n: 0};
+                        math.end = {node: text, delim: '', n: 0};
+                        doc.math.push(math);
+                    }
+                }, '']
+            }
+        },
+        loader: {
+            load: ['[tex]/noerrors']
+        }
     };
 </script>
 
-<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" id="MathJax-script"></script>
 
 <style>
-/* 数式やMarkdownコンテンツが見やすいように簡単なスタイルを追加 */
-body { font-family: Arial, sans-serif; padding: 20px; }
+/* 見やすいように簡単なスタイルを追加 */
+body { 
+    font-family: Arial, sans-serif; 
+    line-height: 1.6;
+    padding: 20px;
+}
 </style>
 </head>
 <body>
@@ -34,30 +70,32 @@ body { font-family: Arial, sans-serif; padding: 20px; }
 marked.setOptions({
   breaks: true, // Markdownの改行をHTMLの <br> に変換
   gfm: true,    // GitHub Flavored Markdownを有効化
+  // セキュリティリスクのため、sanitize: false は削除
 });
 
-// ChatGPTが提示したコア処理
+// Markdown を読み込んで表示するメイン処理
 fetch('notes/chapter1.md')
   .then(res => {
-        // HTTPエラー（404 Not Foundなど）をチェックし、エラーを投げる
+        // HTTPエラー（404 Not Foundなど）をチェック
         if (!res.ok) {
             throw new Error(`ファイルの読み込みに失敗しました: ${res.status} ${res.statusText}`);
         }
         return res.text();
     })
   .then(text => {
-      const container = document.getElementById('note-container');
-      // 1. MarkdownをHTMLに変換
-      container.innerHTML = marked.parse(text);
-      // 2. MathJaxによる数式レンダリングを実行
-      MathJax.typesetPromise([container]);
+    const container = document.getElementById('note-container');
+    // 1. Markdown → HTMLへ変換
+    container.innerHTML = marked.parse(text); 
+    // 2. MathJaxによる数式レンダリングを実行
+    MathJax.typesetPromise([container]); 
   })
   .catch(err => {
     console.error('Markdown 読み込み失敗:', err);
     // ユーザー向けのわかりやすいエラー表示
     document.getElementById('note-container').innerHTML = 
         `<p style="color: red;"><strong>ノートの読み込みに失敗しました。</strong></p>
-         <p>エラー詳細: ${err.message}</p>`;
+         <p>エラー詳細: ${err.message}</p>
+         <p>「notes/chapter1.md」ファイルが存在するか確認してください。</p>`;
   });
 </script>
 
