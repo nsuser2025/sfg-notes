@@ -6,7 +6,7 @@ $$
 \mathbf{P} = \varepsilon_0 \left( \chi^{(1)} \mathbf{E} + \chi^{(2)} \mathbf{E}\mathbf{E} + \chi^{(3)} \mathbf{E}\mathbf{E}\mathbf{E} + \cdots \right)
 $$
 
-- \( \chi^{(1)} \) : 線形感受率
+$$\chi^{(1)}$$ : 線形感受率
 - $\chi^{(1)}$ : 線形感受率
 - $\chi^{(2)}$ : 二次非線形感受率（SFGに寄与）
 - $\chi^{(3)}$ : 三次非線形感受率
