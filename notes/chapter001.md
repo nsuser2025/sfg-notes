@@ -5,7 +5,7 @@
 $$
 \begin{aligned}
 \mathbf{P} &= \frac{A}{B} \\
-X &= Y
+X &= ABCD
 \end{aligned}
 $$
 
