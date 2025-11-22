@@ -4,6 +4,8 @@ import streamlit.components.v1 as components
 import json
 import os
 
+st.set_page_config(layout="wide")
+
 markdown_contents = {}
 note_paths = {
     "chapter001": "notes/chapter001.md",
