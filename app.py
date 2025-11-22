@@ -9,7 +9,7 @@ import os
 markdown_contents = {}
 note_paths = {
     "chapter001": "notes/chapter001.md",
-    "chapter2": "notes/chapter002.md",
+    "chapter002": "notes/chapter002.md",
     "chapter3": "notes/chapter3.md",
 }
 
