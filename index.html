@@ -2,7 +2,7 @@
 <html lang="ja">
 <head>
 <meta charset="UTF-8">
-<title>動的Markdownノートビューア（数式対応）</title>
+<title>SFG Primer</title>
 
 <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
 
@@ -28,20 +28,20 @@ window.MathJax = {
         padding: 15px; 
         margin-top: 20px; 
         background-color: #f9f9f9;
-        min-height: 200px; 
+        min-height: 200px;
     }
 </style>
 </head>
 <body>
 
-<h1>Markdown ノート選択</h1>
+<h1>SFG Primer</h1>
 
-<label for="chapter-select">ノートを選択してください:</label>
+<label for="chapter-select">topics:</label>
 <select id="chapter-select" onchange="loadMarkdown(this.value)">
     <option value="" disabled selected>--- 選択してください ---</option>
-    <option value="chapter001">第1章：線形感受率</option>
-    <option value="chapter2">第2章：非線形光学</option>
-    <option value="chapter3">第3章：フーリエ変換</option>
+    <option value="chapter001">SFG入門</option>
+    <option value="chapter2">非線形光学</option>
+    <option value="chapter3">フーリエ変換</option>
 </select>
 
 <div id="note-container">
