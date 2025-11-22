@@ -4,7 +4,7 @@ import streamlit.components.v1 as components
 import json
 import os
 
-#st.set_page_config(layout="wide")
+#st.set_page_config(layout="wide")　最大化
 
 markdown_contents = {}
 note_paths = {
@@ -31,5 +31,5 @@ html_content = html_template.replace(
     f"const allMarkdownData = {markdown_json};"
 )
 
-components.html(html_content, height=800, width=4000, scrolling=True)
-#components.html(html_content, height=800, width=None, scrolling=True)
+components.html(html_content, height=2000, scrolling=True)
+#components.html(html_content, height=800, width=None, scrolling=True)　最大化
