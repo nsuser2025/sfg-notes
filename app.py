@@ -29,4 +29,4 @@ html_content = html_template.replace(
     f"const allMarkdownData = {markdown_json};"
 )
 
-components.html(html_content, height=800, width=1200, scrolling=True)
+components.html(html_content, height=800, width=None, scrolling=True)
