@@ -8,7 +8,7 @@
 
 $$
 \begin{align}
-\mathbf{P}\_{\rm ind}^{(2)}(-\mathbf{r}) &= {\chi}^{(2)}:\mathbf{E}(-\mathbf{r})\mathbf{E}(-\mathbf{r}) \\\\
+\nabla\cdot\mathbf{P}\_{\rm ind}^{(2)}(-\mathbf{r}) &= {\chi}^{(2)}:\mathbf{E}(-\mathbf{r})\mathbf{E}(-\mathbf{r}) \\\\
 &= {\chi}^{(2)}:(-\mathbf{E}(\mathbf{r}))(-\mathbf{E}(\mathbf{r})) = {\chi}^{(2)}:\mathbf{E}(\mathbf{r})\mathbf{E}(\mathbf{r}) \tag{1} \\\\
 -\mathbf{P}\_{\rm ind}^{(2)}(\mathbf{r}) &= -{\chi}^{(2)}:\mathbf{E}(\mathbf{r})\mathbf{E}(\mathbf{r}) \tag{2}
 \end{align}
