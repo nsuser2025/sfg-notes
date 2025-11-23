@@ -9,14 +9,19 @@
 $$
 \begin{align}
 \nabla\cdot\mathbf{E}(\mathbf{r}) &= \frac{\rho}{\epsilon_{0}}
-= \frac{\rho\_{\rm free}+\rho\_{\rm bound}}{\epsilon\_{0}}
+= \frac{\rho\_{\rm free}+\rho\_{\rm bound}}{\epsilon\_{0}} \tag{1}
 \end{align}
 $$
 
 <p>
-従って、$\chi^{(2)}=-\chi^{(2)}$ でなくてはならず、これを満たすのは $\chi^{(2)}=0$ のときだけである。
-界面では $\mathbf{P}(-\mathbf{r}) \neq -\mathbf{P}(\mathbf{r})$ であり、$\chi^{(2)} \neq 0$ である。
+一方、電束密度 $\mathbf{D}$ は次のように定義される。
 </p>
+
+$$
+\begin{align}
+\mathbf{D}(\mathbf{r}) &= \epsilon\_{0} \mathbf{E}(\mathbf{r}) + \mathbf{P}(\mathbf{r}) \tag{2}
+\end{align}
+$$
 
 ---
 ### $\mathbf{E}(-\mathbf{r})=-\mathbf{E}(\mathbf{r})$
