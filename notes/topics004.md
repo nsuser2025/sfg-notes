@@ -31,10 +31,20 @@ $$
 \begin{align}
 \nabla_{\mathbf{r}}\cdot\mathbf{D}(\mathbf{r}) &= \epsilon\_{0} 
 \nabla_{\mathbf{r}}\cdot\mathbf{E}(\mathbf{r}) + \nabla_{\mathbf{r}}\cdot\mathbf{P}(\mathbf{r}) \\\\
-&= (\rho\_{\rm free}+\rho\_{\rm bound}) + \nabla_{\mathbf{r}}\cdot\mathbf{P}(\mathbf{r}) \tag{2}
+&= (\rho\_{\rm free}+\rho\_{\rm bound}) + \nabla_{\mathbf{r}}\cdot\mathbf{P}(\mathbf{r}) \tag{3}
 \end{align}
 $$
 
+<p>
+誘電体のガウスの法則 $\nabla_{\mathbf{r}}\cdot\mathbf{D}(\mathbf{r})=\rho_{\rm free}$ 
+と式3より束縛電荷密度の定義が得られる。
+</p>
+
+$$
+\begin{align}
+\rho_{\rm bound} &= - \nabla_{\mathbf{r}}\cdot\mathbf{P}(\mathbf{r}) \tag{4}
+\end{align}
+$$
 
 
 ---
