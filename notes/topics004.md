@@ -9,8 +9,7 @@
 $$
 \begin{align}
 \nabla\cdot\mathbf{E}(\mathbf{r}) &= \frac{\rho}{\epsilon_{0}} \\\\
-&= {\chi}^{(2)}:(-\mathbf{E}(\mathbf{r}))(-\mathbf{E}(\mathbf{r})) = {\chi}^{(2)}:\mathbf{E}(\mathbf{r})\mathbf{E}(\mathbf{r}) \tag{1} \\\\
--\mathbf{P}\_{\rm ind}^{(2)}(\mathbf{r}) &= -{\chi}^{(2)}:\mathbf{E}(\mathbf{r})\mathbf{E}(\mathbf{r}) \tag{2}
+&= \frac{\rho\_{\rm free}+\rho\_{\rm bound}}{\epsilon\_{0}}
 \end{align}
 $$
 
