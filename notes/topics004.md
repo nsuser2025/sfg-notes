@@ -8,8 +8,8 @@
 
 $$
 \begin{align}
-\nabla\cdot\mathbf{E}(\mathbf{r}) &= \frac{\rho}{\epsilon_{0}} \\\\
-&= \frac{\rho\_{\rm free}+\rho\_{\rm bound}}{\epsilon\_{0}}
+\nabla\cdot\mathbf{E}(\mathbf{r}) &= \frac{\rho}{\epsilon_{0}}
+= \frac{\rho\_{\rm free}+\rho\_{\rm bound}}{\epsilon\_{0}}
 \end{align}
 $$
 
