@@ -12,6 +12,7 @@ note_paths = {
     "chapter002": "notes/chapter002.md",
     "chapter003": "notes/chapter003.md",
     "topics004": "notes/topics004.md",
+    "topics005": "notes/topics005.md",
 }
 
 for key, path in note_paths.items():
