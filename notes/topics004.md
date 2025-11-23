@@ -30,7 +30,8 @@ $$
 $$
 \begin{align}
 \nabla_{\mathbf{r}}\cdot\mathbf{D}(\mathbf{r}) &= \epsilon\_{0} 
-\nabla_{\mathbf{r}}\cdot\mathbf{E}(\mathbf{r}) + \mathbf{P}(\mathbf{r}) \tag{2}
+\nabla_{\mathbf{r}}\cdot\mathbf{E}(\mathbf{r}) + \nabla_{\mathbf{r}}\cdot\mathbf{P}(\mathbf{r}) \\\\
+&= (\rho\_{\rm free}+\rho\_{\rm bound}) + \nabla_{\mathbf{r}}\cdot\mathbf{P}(\mathbf{r}) \tag{2}
 \end{align}
 $$
 
