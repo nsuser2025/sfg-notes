@@ -23,5 +23,18 @@ $$
 \end{align}
 $$
 
+<p>
+ここで電束密度 $\mathbf{D}$ の発散をとる。
+</p>
+
+$$
+\begin{align}
+\nabla_{\mathbf{r}}\cdot\mathbf{D}(\mathbf{r}) &= \epsilon\_{0} 
+\nabla_{\mathbf{r}}\cdot\mathbf{E}(\mathbf{r}) + \mathbf{P}(\mathbf{r}) \tag{2}
+\end{align}
+$$
+
+
+
 ---
 ### $\mathbf{E}(-\mathbf{r})=-\mathbf{E}(\mathbf{r})$
