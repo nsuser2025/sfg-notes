@@ -19,4 +19,4 @@ $$
 界面では $\mathbf{P}(-\mathbf{r}) \neq -\mathbf{P}(\mathbf{r})$ であり、$\chi^{(2)} \neq 0$ である。
 </p>
 
-### $\mathbf{E}(-\mathbf{r})=-\mathbf{E}(\mathbf{r})$
+### Appendix $\mathbf{E}(-\mathbf{r})=-\mathbf{E}(\mathbf{r})$
