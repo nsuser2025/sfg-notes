@@ -8,8 +8,8 @@
 
 $$
 \begin{align}
-\nabla\cdot\mathbf{E}(\mathbf{r}) &= \frac{\rho}{\epsilon_{0}}
-= \frac{\rho\_{\rm free}+\rho\_{\rm bound}}{\epsilon\_{0}} \tag{1}
+\nabla\cdot\mathbf{E}(\mathbf{r}) &= \frac{\rho(\mathbf{r})}{\epsilon_{0}}
+= \frac{\rho\_{\rm free}(\mathbf{r})+\rho\_{\rm bound}(\mathbf{r})}{\epsilon\_{0}} \tag{1}
 \end{align}
 $$
 
@@ -31,7 +31,7 @@ $$
 \begin{align}
 \nabla_{\mathbf{r}}\cdot\mathbf{D}(\mathbf{r}) &= \epsilon\_{0} 
 \nabla_{\mathbf{r}}\cdot\mathbf{E}(\mathbf{r}) + \nabla_{\mathbf{r}}\cdot\mathbf{P}(\mathbf{r}) \\\\
-&= (\rho\_{\rm free}+\rho\_{\rm bound}) + \nabla_{\mathbf{r}}\cdot\mathbf{P}(\mathbf{r}) \tag{3}
+&= (\rho\_{\rm free}(\mathbf{r})+\rho\_{\rm bound}(\mathbf{r})) + \nabla_{\mathbf{r}}\cdot\mathbf{P}(\mathbf{r}) \tag{3}
 \end{align}
 $$
 
@@ -42,7 +42,7 @@ $$
 
 $$
 \begin{align}
-\rho_{\rm bound} &= - \nabla_{\mathbf{r}}\cdot\mathbf{P}(\mathbf{r}) \tag{4}
+\rho_{\rm bound}(\mathbf{r}) &= - \nabla_{\mathbf{r}}\cdot\mathbf{P}(\mathbf{r}) \tag{4}
 \end{align}
 $$
 
