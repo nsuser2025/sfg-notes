@@ -9,11 +9,11 @@ $\mathbf{P}$ には、これら永久双極子の配向による寄与と誘起�
 
 $$
 \begin{align}
-{\bf P} &= \frac{\<{\bf p}\>}{\Delta V}  \tag{1} \\\\
+{\bf P} &= \frac{1}{\Delta V} \sum_{i \in \Delta V} \mathbf{p}\_{i} \tag{1} \\\\
 \end{align}
 $$
 
-$\mathbf{p}_{i}$: 分子$i$の双極子モーメント　
+$\mathbf{p}_{i}$: 分子 $i$ の電気双極子モーメント（永久双極子モーメントと誘起双極子モーメントを含む）　
 $\Delta V$: 単位体積
 
 ### 分極ベクトルと分極電荷密度
