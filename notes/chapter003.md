@@ -9,10 +9,11 @@
 $$
 \begin{align}
 \mathbf{P}\_{\rm ind}^{(2)}(-\mathbf{r}) &= {\chi}^{(2)}:\mathbf{E}(-\mathbf{r})\mathbf{E}(-\mathbf{r}) \\\\
-&= {\chi}^{(2)}:(-\mathbf{E}(\mathbf{r}))(-\mathbf{E}(\mathbf{r})) = {\chi}^{(2)}:\mathbf{E}(\mathbf{r})\mathbf{E}(\mathbf{r}) \tag{5} 
+&= {\chi}^{(2)}:(-\mathbf{E}(\mathbf{r}))(-\mathbf{E}(\mathbf{r})) = {\chi}^{(2)}:\mathbf{E}(\mathbf{r})\mathbf{E}(\mathbf{r}) \tag{1} \\\\
+-\mathbf{P}\_{\rm ind}^{(2)}(\mathbf{r}) &= -{\chi}^{(2)}:\mathbf{E}(\mathbf{r})\mathbf{E}(\mathbf{r}) \tag{2}
 \end{align}
 $$
 
 <p>
-従って、$\chi^{(2)}=-\chi^{(2)}$ を満たのは $\chi^{(2)}=0$ のときだけである。
+従って、$\chi^{(2)}=-\chi^{(2)}$ でなくてはならず、これを満たすのは $\chi^{(2)}=0$ のときだけである。
 </p>
