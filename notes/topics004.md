@@ -9,7 +9,7 @@ $\mathbf{P}$ には、これら永久双極子の配向による寄与と誘起�
 
 $$
 \begin{align}
-{\bf P} &= \frac{<{\bf p}>}{\Delta V}  \tag{1} \\\\
+{\bf P} &= \frac{\<{\bf p}\>}{\Delta V}  \tag{1} \\\\
 \end{align}
 $$
 
