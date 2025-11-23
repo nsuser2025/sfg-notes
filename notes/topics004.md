@@ -1,7 +1,7 @@
-### 分極ベクトルと束縛電荷密度
+### 分極ベクトルと分極電荷密度
 
 <p>
-自由電荷密度 $\rho_{\rm free}$ と束縛電荷密度 $\rho_{\rm bound}$ 
+自由電荷密度 $\rho_{\rm free}$ と分極電荷密度 $\rho_{\rm bound}$ 
 を含む全電荷密度 $\rho$（$=\rho_{\rm free}+\rho_{\rm bound}$）
 についてガウスの法則は次のように表される。
 </p>
@@ -37,7 +37,7 @@ $$
 
 <p>
 誘電体のガウスの法則 $\nabla_{\mathbf{r}}\cdot\mathbf{D}(\mathbf{r})=\rho_{\rm free}$ 
-と式3より束縛電荷密度の定義が得られる。
+と式3より分極電荷密度の定義が得られる。
 </p>
 
 $$
@@ -45,7 +45,3 @@ $$
 \rho_{\rm bound}(\mathbf{r}) &= - \nabla_{\mathbf{r}}\cdot\mathbf{P}(\mathbf{r}) \tag{4}
 \end{align}
 $$
-
-
----
-### $\mathbf{E}(-\mathbf{r})=-\mathbf{E}(\mathbf{r})$
