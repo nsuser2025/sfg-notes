@@ -22,5 +22,5 @@ $$
 \\\\
 &= \frac{Q(\omega)}{\omega}\frac{1}{\textcolor{red}{i\omega}}\frac{1}{\textcolor{red}{2\pi}}
 \int d{\omega}' \textcolor{red}{i{\omega}'} \textcolor{red}{2\pi}
-\bigl\< \alpha_{pq}({\omega}') \dot\mu_{r}(0) \bigr\>} 
+\bigl\< \alpha_{pq}({\omega}') \dot\mu_{r}(0) \bigr\> 
 $$
