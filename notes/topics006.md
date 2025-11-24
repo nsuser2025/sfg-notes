@@ -9,3 +9,10 @@ $$
 \bigl\< \alpha_{pq}({\omega}') \dot\mu_{r}(0) \bigr\> \tag{1}
 \end{align}
 $$
+
+$$
+\begin{align}
+\frac{Q(\omega)}{\omega}\frac{1}{i\omega} \int
+&= \textcolor{red}{1} \tag{2}
+\end{align}
+$$
