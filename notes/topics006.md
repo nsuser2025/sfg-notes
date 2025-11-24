@@ -24,6 +24,10 @@ $$
 \int d{\omega}' \textcolor{red}{i{\omega}'} \textcolor{red}{2\pi \delta(\omega-{\omega}')}
 \bigl\< \alpha_{pq}({\omega}') \dot\mu_{r}(0) \bigr\> \\\\
 \\\\
-&= 
+&= \frac{Q(\omega)}{\omega} 
+\textcolor{green}{\bigl\< \alpha_{pq}({\omega}) \dot\mu_{r}(0) \bigr\>} \\\\
+\\\\
+&= \frac{Q(\omega)}{\omega} \int dt \exp(-i\omega t)
+\bigl\< \alpha_{pq}(t) \dot\mu_{r}(0) \bigr\> \tag{2}
 \end{align}
 $$
