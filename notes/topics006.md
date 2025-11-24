@@ -21,6 +21,11 @@ $$
 \bigl\< \alpha_{pq}({\omega}') \dot\mu_{r}(0) \bigr\>} \\\\
 \\\\
 &= \frac{Q(\omega)}{\omega}\frac{1}{\textcolor{red}{i\omega}}\frac{1}{\textcolor{red}{2\pi}}
-\int d{\omega}' \textcoloro{red}{i{\omega}'}
+\int d{\omega}' \textcolor{red}{i{\omega}'} \textcolor{red}{2\pi}
+\bigl\< \alpha_{pq}({\omega}') \dot\mu_{r}(0) \bigr\>} \\\\
+\\\\
+&= \frac{Q(\omega)}{\omega} \bigl\< \alpha_{pq}({\omega}) \dot\mu_{r}(0) \bigr\>} \\\\
+\\\\
+&= \frac{Q(\omega)}{\omega} \int dt \exp(-i\omega t) \bigl\< \alpha_{pq}({t) \dot\mu_{r}(0) \bigr\>} \tag{2}
 \end{align}
 $$
