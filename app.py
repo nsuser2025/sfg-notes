@@ -14,6 +14,7 @@ note_paths = {
     "topics004": "notes/topics004.md",
     "topics005": "notes/topics005.md",
     "topics006": "notes/topics006.md",
+    "topics007": "notes/topics007.md",
 }
 
 for key, path in note_paths.items():
