@@ -1,4 +1,4 @@
-### Appendix 誘電体のGaussの法則
+### 誘電体のGaussの法則
 
 <p>
 自由電荷密度 $\rho_{\rm free}$ と分極電荷密度 $\rho_{\rm bound}$ 
