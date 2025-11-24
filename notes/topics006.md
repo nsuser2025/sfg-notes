@@ -25,7 +25,5 @@ $$
 \bigl\< \alpha_{pq}({\omega}') \dot\mu_{r}(0) \bigr\>} \\\\
 \\\\
 &= \frac{Q(\omega)}{\omega} \bigl\< \alpha_{pq}({\omega}) \dot\mu_{r}(0) \bigr\>} \\\\
-\\\\
-&= \frac{Q(\omega)}{\omega} \int dt \exp(-i\omega t) \bigl\< \alpha_{pq}({t) \dot\mu_{r}(0) \bigr\>} \tag{2}
 \end{align}
 $$
