@@ -7,7 +7,8 @@ MDで得られたトラジェクトリを用いて、式1の時間相関関数�
 
 $$
 \begin{align}
-\chi^{(2)}\_{pqr}(\omega) &= \frac{Q(\omega)}{\omega} \int^{\infty}_{0} 
+\chi^{(2)}_{pqr}(\omega) &= \frac{Q(\omega)}{\omega} \int^{\infty}_{0}
+dt \exp(-i\omega t)
 \end{align}
 $$
 
@@ -15,7 +16,7 @@ $$
 参考文献 
 </p>
 <p>
-1. Ohto2015_J.Chem.Phys.vol143.124702.pdf
+1. Ohto2015_J.Chem.Phys.vol143.124702.pdfの式5
 </p>
 
 ---
