@@ -11,17 +11,18 @@
 
 <figure style="text-align: center;">
 <img src="https://raw.githubusercontent.com/nsuser2025/sfg-notes/main/notes/skinner_SFG.jpg" alt="Skinner_SFG" width="300">
-<figcaption>図1: Skinnerらによる水界面のSFGスペクトル</figcaption>
+<figcaption style="text-align:center;">図1: Skinnerらによる水界面のSFGスペクトル</figcaption>
 </figure>
 
 <p>
 水界面のSFG計算では、バルクの寄与を排除するため、あるz座標より界面側に位置するOHの伸縮振動の寄与を取り込む。
-通常はO原子を基準にして水分子の所属する領域をバルク領域と界面領域に選別し、
-仮に片方のOHがバルク領域に位置していたとしても、水分子の二本のOHを界面領域に含める方法を取る。
+通常はO原子を基準にして水分子の所属する領域をバルク領域と界面領域に選別する。
+仮に片方のOHがバルク領域に位置していた場合でも、水分子の二本のOHを界面領域に含める方法を取る。
 この方法で計算したSFGスペクトルには3200 ${\rm cm}^{-1}$ に正のピークは現れない。
 一方、SkinnerらはOHの中点座標を基準にしてバルク領域と界面領域を選別していたため、
-同一の水分子のOHの片方だけ界面側、もう片方がバルク側に分類される場合があり、
-このOHの分類漏れが人工的な正のピークを生じさていた。  
+同一の水分子のOHの片方だけ界面側、もう片方がバルク側に分類される場合がある。
+このOHの分類方法の違いによって、3200 ${\rm cm}^{-1}$
+付近に人工的な正のピークが現れる結果となった。
 </p>
 
 <p>
