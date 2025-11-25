@@ -24,5 +24,6 @@ Ishiyama–Morita モデルでは、水分子の双極子を基本単位とす�
 そのため 3200 cm⁻¹ positive は自然には生じず、
 過去の実験スペクトルを再現するには追加的な相互作用を導入する必要がある。
 
-1. Pieniazek2011_J.Am.Chem.Soc.vol133.10360.pdf
+<p>
+1. Pieniazek2011_J.Am.Chem.Soc.vol133.10360.pdf  
 </p>
