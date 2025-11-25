@@ -9,7 +9,7 @@
 であることが明らかになった。
 </p>
 
-<img src="skinner_SFG.jpg" alt="SkinnerらによるSFGスペクトル" width="400">
+<img src="./notes/skinner_SFG.jpg" alt="SkinnerらによるSFGスペクトル" width="400">
 
 <p>
 通常のO原子基準で水分子を選別し、分子の二本のOHをセットで含める方法では3200 ${\rm cm}^{-1}$
