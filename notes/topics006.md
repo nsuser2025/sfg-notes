@@ -15,11 +15,14 @@ $$
 \end{align}
 $$
 
+$\alpha_{pq,i}$: 分子$i$の分極率の$pq$成分
+$\mu_{r,j}$: 分子$j$の電気双極子の$r$成分
+
 <p>
 参考文献 
 </p>
 <p>
-1. Ohto2015_J.Chem.Phys.vol143.124702.pdfの式5
+1. Ohto2015_J.Chem.Phys.vol143.124702.pdf
 </p>
 
 ---
