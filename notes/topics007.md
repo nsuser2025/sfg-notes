@@ -11,6 +11,7 @@
 
 <div style="text-align: center;">
 <img src="https://raw.githubusercontent.com/nsuser2025/sfg-notes/main/notes/skinner_SFG.jpg" alt="Skinner_SFG" width="300">
+SkinnerのSFGスペクトル
 </div>
 
 <p>
