@@ -2,7 +2,7 @@
 
 <p>
 水の気液界面のSFGスペクトルでは、3200 ${\rm cm}^{-1}$ 付近のスペクトル形状が実験・計算で一致しない時期があり、議論を呼んだ。
-当初、Skinner$^{1}$らによるMD計算では 3200 ${\rm cm}^{-1}$ に明瞭な正のピークが現れ、一部の実験結果とよく一致していた。
+当初、Skinner$^{1}$らによるMD計算では 3200 ${\rm cm}^{-1}$ に明瞭な正のピークが現れ（図1）、一部の実験結果とよく一致していた。
 しかしその後、HD-SFGなどの精度の高い実験では正のピークは観測されず、これらの結果は第一原理MDによる計算結果を支持するものであった。
 当時は、実験精度や計算の正当性が論争の中心にあるかのように見えたが、後にSkinnerらの計算に見られた正のピークは、
 <span style="color:red;">OHクロモフォアの選び方に起因するアーティファクト</span>
@@ -11,7 +11,7 @@
 
 <div style="text-align: center;">
 <img src="https://raw.githubusercontent.com/nsuser2025/sfg-notes/main/notes/skinner_SFG.jpg" alt="Skinner_SFG" width="300">
-SkinnerのSFGスペクトル
+<figcaption>図1: Skinnerらによる水界面のSFGスペクトル</figcaption>
 </div>
 
 <p>
