@@ -8,7 +8,7 @@ MDで得られたトラジェクトリを用いて、式1の時間相関関数�
 $$
 \begin{align}
 \chi^{(2)}_{pqr}(\omega) &= \frac{Q(\omega)}{\omega} \int\_{0}^{\infty} dt \exp(-i \omega t)
-\bigl\langle \sum\_{ij} {\alpha}\_{pq,i}(t) \dot{\mu}\_{r,j}}(0) \bigr\rangle
+\bigl\langle \sum\_{ij} \alpha\_{pq,i}(t) \dot{\mu}\_{r,j}}(0) \bigr\rangle
 \end{align}
 $$
 
