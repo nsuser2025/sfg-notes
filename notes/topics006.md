@@ -7,7 +7,7 @@ MDで得られたトラジェクトリを用いて、式1の時間相関関数�
 
 $$
 \begin{align}
-\chi^{(2)}_{pqr}(\omega) &= \frac{Q(\omega)}{\omega} \int_{0}^{\infty} dt
+\chi^{(2)}_{pqr}(\omega) &= \frac{Q(\omega)}{\omega} \int\_{0}^{\infty} dt
 \end{align}
 $$
 
