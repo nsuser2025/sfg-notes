@@ -15,7 +15,7 @@ $$
 参考文献 
 </p>
 <p>
-1. Ohto 
+1. Ohto2015_J.Chem.Phys.vol143.124702.pdf
 </p>
 
 ---
