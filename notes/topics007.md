@@ -9,7 +9,7 @@
 であることが明らかになった。
 </p>
 
-![Skinnerらによる水界面のSFG](https://github.com/nsuser2025/sfg-notes/blob/277cfb578f6d3fe0bc5e9fd899927d201bf113c4/notes/skinner_SFG.jpg)
+![Skinnerらによる水界面のSFG](https://raw.githubusercontent.com/nsuser2025/sfg-notes/main/notes/skinner_SFG.jpg)
 
 <p>
 通常のO原子基準で水分子を選別し、分子の二本のOHをセットで含める方法では3200 ${\rm cm}^{-1}$
