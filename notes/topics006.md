@@ -11,7 +11,7 @@ $$
 \bigl\langle \sum\_{ij} \alpha\_{pq,i}(t) \dot{\mu}\_{r,j}(0) \bigr\rangle \\\\
 \\\\
 &= \frac{Q(\omega)}{i {\omega}^{2}} \int\_{0}^{\infty} dt \exp(-i \omega t)
-\bigl\langle \sum\_{ij} \dot{\alpha}\_{pq,i}(t) \dot{\mu}\_{r,j}(0) \bigr\rangle
+\bigl\langle \sum\_{ij} \dot{\alpha}\_{pq,i}(t) \dot{\mu}\_{r,j}(0) \bigr\rangle \tag{1}
 \end{align}
 $$
 
@@ -24,7 +24,7 @@ $$
 
 ---
 
-### 導出
+### 式1の確認
 
 $$
 \begin{align}
@@ -33,7 +33,7 @@ $$
 \exp(i{\omega}' t) \bigl\< \alpha_{pq}({\omega}') \dot\mu_{r}(0) \bigr\> \biggr\] \\\\
 \\\\
 &= \frac{1}{2\pi} \int d{\omega}' i{\omega}' \exp(i{\omega}' t) 
-\bigl\< \alpha_{pq}({\omega}') \dot\mu_{r}(0) \bigr\> \tag{1}
+\bigl\< \alpha_{pq}({\omega}') \dot\mu_{r}(0) \bigr\> \tag{2}
 \end{align}
 $$
 
@@ -54,6 +54,6 @@ $$
 \textcolor{red}{\bigl\< \alpha_{pq}({\omega}) \dot\mu_{r}(0) \bigr\>} \\\\
 \\\\
 &= \frac{Q(\omega)}{\omega} \int dt \exp(-i\omega t)
-\bigl\< \alpha_{pq}(t) \dot\mu_{r}(0) \bigr\> \tag{2}
+\bigl\< \alpha_{pq}(t) \dot\mu_{r}(0) \bigr\> \tag{3}
 \end{align}
 $$
