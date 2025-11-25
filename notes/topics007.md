@@ -26,6 +26,6 @@ Ishiyama–Moritaのモデルでは、水分子の双極子を基本単位とす
 </p>
 
 <p>
-参考文献
+参考文献　\
 1. Pieniazek2011_J.Am.Chem.Soc.vol133.10360.pdf  
 </p>
